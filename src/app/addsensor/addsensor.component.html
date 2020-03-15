@@ -1,0 +1,60 @@
+<div class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Sensor</h4>
+                        <p class="card-category">Complete sensor information</p>
+                    </div>
+                    <div class="card-body">
+    <form (ngSubmit)="addDevice(deviceForm)" #deviceForm="ngForm">
+    <div class="row">
+        <div class="col-md-12">
+        <div mat-form-field class="example-full-width">
+        <mat-label for="name"> Name</mat-label>
+        <input matInput placeholder="Name" type="text" name="name" ngModel>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <div mat-form-field class="example-full-width">
+        <mat-label for="description"> Description</mat-label>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <div mat-form-field class="example-full-width">
+        <textarea placeholder="Description" name="description" ngModel></textarea><br>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <div mat-form-field class="example-full-width">
+        <mat-label for="status">Status</mat-label>
+        <input type="checkbox" name="status" [ngModel]="false" ngModel>
+        </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+        <div mat-form-field class="example-full-width">
+        <mat-label for="value">Value</mat-label>
+        <input matInput placeholder="Value" type="number" name="value" ngModel>
+        </div>
+        </div>
+    </div>
+    <button mat-raised-button type="submit" class="btn btn-danger pull-right">Submit</button>
+    <div class="clearfix"></div>
+    </form>
+    <a *ngIf="!isAdd" href="javascript:void(0)" class="btn btn-light btn-round disable" [routerLink]="['/dashboard']">Go to Dashboard</a>
+    <a *ngIf="isAdd" href="javascript:void(0)" class="btn btn-success btn-round " [routerLink]="['/dashboard']">Go to Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
